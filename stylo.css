@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-image: url(img/restau.jpg);
+    text-align: center;
+    padding: 100px;
+    top: 0px;
+}
+
+header img {
+    max-width:200px;
+}
+
+nav {
+    background-color: gray;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    padding: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+main {
+    display: flex;
+}
+
+.contenido-principal {
+    flex: 2;
+    padding: 20px;
+    top:20px;
+}
+
+
+
+.submenu {
+  flex: 0;
+  padding: 10px;
+  background-color: #0C8A7D;
+  width: 150px;
+  height: 480px;
+  position: fixed;
+  right: 0;
+
+}
+
+.submenu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.submenu ul li {
+  border-bottom: 1px solid #666;
+}
+
+.submenu ul li a {
+  display: block;
+  color: #ffff;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.submenu ul li a:hover {
+  background-color: grey;
+}
+
+footer {
+    background-color: #03FDC5;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    height: 35px;
+    font-family: 'Raleway', serif;
+}
+
+h1{
+    color: white;
+    font-family: 'Helvetica', serif;
+}
+h2{
+    font-family: 'Arial Narrow', serif;
+}
+
+p{
+    font-family: 'Times New Roman', serif;
+}
+
+.menu {
+  flex: 0;
+  padding: 10px;
+  background-color: #0C8A7D;
+  width: 200px;
+  height: 400px;
+  position: fixed;
+  left: 0;
+
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  border-bottom: 1px solid #666;
+}
+
+.menu ul li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+.menu ul li a:hover {
+  background-color: grey;
+}
