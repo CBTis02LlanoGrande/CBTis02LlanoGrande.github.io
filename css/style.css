@@ -1,4 +1,4 @@
-        * {
+      * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -212,13 +212,14 @@ video {
     position: absolute;
 }
 
+
 /* Restante del CSS que ya tienes */
 
 /* Estilos para el contenedor del formulario de login */
 .login-container {
     
     position: fixed;
-    top: 80%;
+    top: 90%;
     left: 5%;
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
@@ -226,7 +227,6 @@ video {
     width: 300px;
     z-index: 1000; /* Asegura que el login esté sobre otros elementos */
     color: white;
-    
 }
 
 .login-form h2 {
@@ -261,6 +261,4 @@ video {
 
 .login-form button:hover {
     background-color: orange;
-}
-
-
+       }
