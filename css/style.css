@@ -1,355 +1,266 @@
-a,body,div,form,html,img,input,label,p,span{
-	margin:0;
-	padding:0;
-	border:0;
-	font-family:sans-serif,Arial
-}
-        /* Estilos básicos para el menú */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-nav {
-    background-color: black; /* Fondo oscuro para el menú */
-}
+        body {
+            font-family: Arial, sans-serif;
+            
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+        .banner-container {
+            position: relative;
+            width: 100%; /* El ancho es el 100% del navegador */
+            height: 220px; /* La altura es fija a 320px */
+            margin: 0;
+            overflow: hidden;
+        }
 
-.carousel {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
+        .banner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%; /* Asegura que el contenedor de las imágenes tenga la altura de 320px */
+        }
+
+        .banner-img {
+            width: 100%; /* Ancho de la imagen igual al ancho de la pantalla */
+            height: auto; /* Altura fija de 320px */
+            object-fit: cover; /* Asegura que la imagen se recorte de manera adecuada */
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Estilo para adaptabilidad */
+        @media screen and (max-width: 768px) {
+            button {
+                font-size: 18px;
+                padding: 8px;
+            }
+        }
+
+        .linea {
+    justify-content: center;
+   background: linear-gradient(to right, 
+                #FFD700, /* Oro puro */
+                #FFCC00, /* Amarillo brillante */
+                #FFB800, /* Amarillo oscuro */
+                #F5C200, /* Dorado */
+                #E1A900  /* Dorado oscuro */
+            );
     overflow: hidden;
-}
-
-.carousel-images {
+    font-family: Arial, Helvetica, sans-serif;
+    float: left;
     display: flex;
-    transition: transform 5.5s ease;
-}
-
-.carousel-image {
-    min-width: 100%;
-    box-sizing: border-box;
-}
-
-.carousel button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.5);
-    border: none;
-    cursor: pointer;
+    align-items: center;
     padding: 10px;
-}
-
-
-
-.image-container {
-    text-align: center;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-around; /* Espacio uniforme entre enlaces */
-    background-color: #333;
-    padding: 10px 0; /* Espaciado vertical alrededor de la barra */
-}
-
-.navbar a {
     color: white;
     text-decoration: none;
-    padding: 10px 15px; /* Espaciado alrededor del texto */
-    transition: background-color 0.3s; /* Transición suave para el hover */
+    width: 100%;
+    height: 42px;
 }
 
-.navbar a:hover {
-    background-color: #575757; /* Color de fondo al pasar el ratón */
+.buscador-container {
+    position: relative; /* Asegura que el contenedor sea el punto de referencia */
+    width: 100%;
+    height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
 }
 
-@media screen and (max-width: 600px) {
-    .navbar {
-        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-    }
-    .navbar a {
-        padding: 8px; /* Ajustar espaciado para pantallas pequeñas */
-    }
-}
-banner{
-
-	background-color:#f0ee81; 
-}
-  
-.body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .video-container {
-            width: 104px; /* Ajusta el tamaño según sea necesario */
-            height: 104px; /* Ajusta el tamaño según sea necesario */
-             object-fit: cover;
-           
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #000; /* Fondo negro para el contenedor */ 
-            border-radius: 50px;
-           
-        }
-        .video {
-            width: 50%;
-            height: auto;
-            border-radius: 50%;
-
-        }
-
-
-
-.image-container img {
-    width: 45%; /* Set width for images */
-    height: 100%; /* Make images take the full height of the container */
-    object-fit: cover; /* Ensure images cover their containers without distortion */
+.buscador {
+    position: absolute;
+    top: 6px;
+    right: 50px; /* Ajusta la distancia desde el borde derecho */
+    z-index: 1000;  /* Asegura que el buscador esté sobre otros elementos */
 }
 
-.image-container {
+.buscador input {
+
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    margin-right: 45px;
+}
+
+.buscador button {
+    right: -25px; /* Aleja el botón 10px del borde derecho */
+    top: 18px;
+    padding: 5px 10px; /* Hace el botón más pequeño al reducir el padding */
+    background-color: darkorange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px; /* Puedes ajustar el tamaño de la fuente también si lo deseas */
+}
+
+.buscador button:hover {
+    background-color: orange;
+}
+
+    nav {
+  background-color: darkorange;
+  color: white;
+  padding: 2px;
+  display: flex;
+  justify-content: center; /* Centra los elementos en el contenedor */
+
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Asegura que los elementos de la lista estén centrados */
+
+}
+
+nav ul li {
+  position: relative;
+  padding: 2px;
+  margin-right: 30px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+nav ul li a:hover {
+  background-color: orange;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: darkorange;
+  width: 142px;
+}
+
+.dropdown li {
+  padding: 1px;
+   margin-bottom: 5px; /* Agrega espacio entre las opciones del desplegable */
+}
+
+.dropdown li a:hover {
+  background-color: orange;
+}
+
+nav ul li:hover .dropdown {
+  display: block;
+}
+
+
+
+/* Estilos para el contenedor principal */
+.cin {
+    top: -232px;
+  position: relative; /* Permite usar posicionamiento absoluto en los elementos hijos */
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  height: 100vh; /* Hace que el contenedor ocupe toda la altura de la ventana */
+  position: relative;
+}
+
+/* Estilos para la imagen de la cinta */
+.cinta {
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  height: auto; /* Mantiene la relación de aspecto */
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+.video-container {
+
+    width: 130px; /* Ajusta el tamaño según sea necesario */
+    height: 130px; /* Ajusta el tamaño según sea necesario */
+    border-radius: 50%; /* Hace que el contenedor sea redondo */
+    overflow: hidden; /* Oculta el desbordamiento */
     display: flex;
-    justify-content: space-between;
-    align-items: center; /* Center items vertically */
-    height: 100px; /* Ajusta esta altura según el video */
-    padding: 0; /* Optional padding */
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ccc; /* Opcional: borde alrededor */
+    margin-top: 10px; /* Espacio superior */
+    position: absolute;
 }
-body,html{
-	min-height:100%;
-	overflow-x:hidden
+
+/* Restante del CSS que ya tienes */
+
+/* Estilos para el contenedor del formulario de login */
+.login-container {
+    
+    position: fixed;
+    top: 80%;
+    left: 5%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    z-index: 1000; /* Asegura que el login esté sobre otros elementos */
+    color: white;
+    
 }
-	body{
 
-		.fondo{	
-		float: left;
-        width: 205px;
-        height: 265px;
-        background-image: url(../img/gis.jpg);
-        color: gray;
-        margin-left: 10px;     
-        padding: 50px;
-        font-size: 10px;
-        border-radius: 10px;  /* Redondea las esquinas (ajusta el valor según lo necesites) */		
-   justify-content: flex-start;
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
 
-	a{
-		color:#486173
-	}
+.login-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
 
+.login-form input,
+.login-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
-	
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: darkorange;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
-	input,label{
-		vertical-align:middle;
-		white-space:normal;
-		background:0 0;line-height:1
-	}
-	label{
-		position:relative;
-		display:block
-	}
-	p::first-letter{
-		text-transform:uppercase
-	}
-	.main{
-		min-height:calc(100vh - 90px);
-		width:100%;
-		display:-webkit-box;
-		display:-ms-flexbox;
-		display:flex;-
-		webkit-box-orient:vertical;
-		-webkit-box-direction:normal;
-		-ms-flex-direction:column;
-		flex-direction:column
-	}
-	.ie-fixMinHeight{
-		display:-webkit-box;
-		display:-ms-flexbox;
-		display:flex
-	}
-	.ico{
-		height:16px;
-		position:absolute;
-		top:0;left:0;
-		margin-top:13px;
-		margin-left:14px
-	}
-	.logo{
-		max-width:200px;
-		display:block;
-		margin:0 auto 30px auto
-	}
-	.logo *{
-		fill:#fff
-	}
-		.lite 
-		.logo *{
-			fill:#444
-		}
-
-
-  
-		h1{
-			text-align:center;
-			color:#fff;
-			font-size:24px!important
-		}
-		*{-webkit-box-sizing:border-box;
-			box-sizing:border-box;
-			font-size:16px
-		}
-			.wrap{
-				margin:auto;
-				padding:40px;
-				-webkit-transition:width .3s ease-in-out;
-				transition:width .3s ease-in-out
-			}
-			@media only screen and (min-width:1px) and (max-width:575px)
-			{
-				.wrap{
-					width:100%
-				}
-			}
-			form{
-				width:100%;
-				margin-bottom:20px
-			}
-			@-webkit-keyframes fadeIn{from{opacity:0}
-				to{opacity:1}}
-			@keyframes fadeIn{from{opacity:0}
-				to{opacity:1}}.fadeIn{
-				-webkit-animation-name:fadeIn;animation-name:fadeIn}
-				.animated{
-					-webkit-animation-duration:1s;
-					animation-duration:1s;
-					-webkit-animation-fill-mode:both;
-					animation-fill-mode:both
-				}
-					.info{
-						color:#fff;text-align:center;
-						margin-bottom:30px
-					}
-					input{
-						outline:0;
-						-webkit-appearance:none;
-						-moz-appearance:none;
-						appearance:none
-					}
-					input:focus{outline:0
-					}
-					input[type=password],input[type=text]{width:100%;
-						border:1px solid background-color: rgba(255,255,255,.8);
-						height:44px;padding:3px 20px 3px 40px;margin-bottom:20px;
-						border-radius:6px;background-color:rgba(255,255,255,.8);
-						-webkit-transition:-webkit-box-shadow 
-						.3s ease-in-out;
-						transition:-webkit-box-shadow .3s ease-in-out;
-						transition:box-shadow 
-						.3s ease-in-out;transition:box-shadow 
-						.3s ease-in-out,-webkit-box-shadow 
-						.3s ease-in-out
-					}
-					input[type=password]:focus,
-					input[type=text]:focus{-webkit-box-shadow:0 0 5px 0 rgba(255,255,255,1);
-						box-shadow:0 0 5px 0 rgba(255,255,255,1)
-					}
-						.bt{
-							opacity:.4
-						}
-						input[type=submit]
-						{
-							background:#3e4d59;
-							color:#fff;
-							border:0;cursor:pointer;
-							text-align:center;width:100%;
-							height:44px;border-radius:6px;
-							-webkit-transition:background 
-							.3s ease-in-out;transition:background 
-							.3s ease-in-out
-						}
-						
-
-						input[type=submit]:focus,
-						input[type=submit]:hover{
-							background:#33404a
-						}
-						table{
-							border-collapse:collapse;
-							width:100%;
-							margin-bottom:20px
-						}
-						table td{color:#fff;
-							border-bottom:1px solid #e6e6e6;
-							padding:10px 4px 10px 0
-						}
-						table td:first-child{font-weight:700}
-						.lite{background:#fff
-						}
-						.lite input[type=password],
-						.lite input[type=text]
-						{
-							border:1px solid #c3c3c3
-						}
-						.lite 
-						.info,
-						.lite h1,
-						.lite table td{color:#444}
-						.lite input[type=password]:focus,
-						.lite input[type=text]:focus{-webkit-box-shadow:0 0 5px 0 rgba(62,77,89,.2);
-							box-shadow:0 0 5px 0 rgba(62,77,89,.2)
-						}
-						.dark{
-							background:#343434
-							}
-							.dark input[type=submit]{
-								background:#dc3a41
-							}
-							.dark input[type=submit]:focus,
-							.dark input[type=submit]:hover{
-								background:#b92f35
-							}
-							.dark input[type=password],
-							.dark input[type=text]{
-								background-color:#fff
-							}
-							.dark a{
-								color:#dc3a41
-							}
-
-		.dark table td
-		{
-			border-bottom:1px solid #505050
-		}
-		.info
-		.alert{color:#da3d41
-		}
-		@media (min-width:576px)
-		{
-			.wrap{width:410px
-			}
-			*{font-size:14px!important
-		}
-	}
-         
+.login-form button:hover {
+    background-color: orange;
+}
 
 
