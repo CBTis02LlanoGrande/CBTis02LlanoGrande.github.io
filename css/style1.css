@@ -28,6 +28,7 @@
     width: 150vw; /* Ancho del 100% del viewport */
     height: 100%; /* Alto del 100% del viewport */
     object-fit: cover; /* Hace que la imagen cubra todo el área sin distorsionarse */
+
 }
 
 
