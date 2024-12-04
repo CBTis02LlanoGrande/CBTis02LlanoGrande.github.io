@@ -25,7 +25,8 @@
 }
 
 .banner-img {
-    width: 150vw; /* Ancho del 100% del viewport */
+    position: relative;
+    width: 100vw; /* Ancho del 100% del viewport */
     height: 100%; /* Alto del 100% del viewport */
     object-fit: cover; /* Hace que la imagen cubra todo el área sin distorsionarse */
 
@@ -65,11 +66,7 @@
         .linea {
     justify-content: center;
    background: linear-gradient(to right, 
-                #FFD700, /* Oro puro */
-                #FFCC00, /* Amarillo brillante */
-                #FFB800, /* Amarillo oscuro */
-                #F5C200, /* Dorado */
-                #E1A900  /* Dorado oscuro */
+                #BC955C  /* Dorado oscuro */
             );
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
@@ -109,7 +106,7 @@
     right: -25px; /* Aleja el botón 10px del borde derecho */
     top: 18px;
     padding: 5px 10px; /* Hace el botón más pequeño al reducir el padding */
-    background-color: darkorange;
+    background-color: #691C32;
     color: white;
     border: none;
     border-radius: 5px;
@@ -118,13 +115,13 @@
 }
 
 .buscador button:hover {
-    background-color: orange;
+    background-color: #6F7271;
 }
 
 nav {
     position: relative; /* Para que el menú esté por encima del fondo */
     z-index: 1; /* Asegura que el menú esté encima de la imagen y el video */
-    background-color:  #566573; /* Fondo semitransparente */
+    background-color:  #6F7271; /* Fondo semitransparente */
     padding: 10px 0;
 }
 
@@ -178,8 +175,6 @@ nav ul li:hover .dropdown {
 
 
 
-
-
 /* Estilos para el contenedor principal */
 .cin {
     top:-232px;
@@ -206,17 +201,20 @@ video {
 }
 
 .video-container {
-  
-    width: 130px; /* Ajusta el tamaño según sea necesario */
-    height: 130px; /* Ajusta el tamaño según sea necesario */
+    object-position:center; 
+    object-fit:cover;
+    width: 109px; /* Ajusta el tamaño según sea necesario */
+    height: 109px; /* Ajusta el tamaño según sea necesario */
     border-radius: 50%; /* Hace que el contenedor sea redondo */
     overflow: hidden; /* Oculta el desbordamiento */
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #ccc; /* Opcional: borde alrededor */
-    margin-top: 10px; /* Espacio superior */
-    position: absolute;
+    border: 1px solid #FFFFFF; /* Opcional: borde alrededor */
+    margin-top: 5px; /* Espacio superior */
+    position: absolute;  
+    width: 100px; /* Tamaño reducido de la imagen */
+    height: 100px; /* Tamaño reducido de la imagen */
 }
 
 /* Restante del CSS que ya tienes */
@@ -227,25 +225,25 @@ video {
     position: absolute;
     top: 80%;
     left: 5%;
-    background-color: #f4d03f;
+    background-color:#BC955C; /*color principal del login*/
     padding: 20px;
     border-radius: 8px;
     width: 300px;
     z-index: 1000; /* Asegura que el login esté sobre otros elementos */
-    color: gray;
+    color: camel;
     
 }
 
 
 .login-form h2 {
-    text-align: center;
+    text-align: center; /* Centra el texto del encabezado */
     margin-bottom: 10px;
 }
 
 .login-form label {
     display: block;
     margin-bottom: 10px;
-    font-weight: bold;
+    font-weight: bold; /* Hace el texto de la etiqueta en negrita */
 
 }
 
@@ -254,7 +252,7 @@ video {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; /* Define un borde gris claro */
     border-radius: 4px;
 
 }
@@ -265,8 +263,8 @@ video {
     justify-content: center;
     width: 10%;
     padding: 8px;
-    background-color: darkorange;
-    color: gray;
+    background-color: #9c9ba0; /* Color de fondo del botón */
+    color: #7b7172; /* Color del texto del botón */
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -275,7 +273,7 @@ video {
 }
 
 .login-form button:hover {
-    background-color: orange;
+    background-color: darkgray; /* Cambia el color de fondo del botón al pasar el cursor */
 
 
 }
