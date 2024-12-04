@@ -3,112 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Datos del Docente</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 50%;
-            margin: 30px auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            text-align: center;
-        }
-        label {
-            font-size: 16px;
-            margin-bottom: 8px;
-            display: block;
-        }
-        input[type="text"], input[type="email"], input[type="number"], textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        .result {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-            display: none;
-        }
-    </style>
-</head>
+        <link rel="stylesheet" type="text/css" href="css/estylos3.css">
+    <title>Revisión de Docentes</title>
+   
+    </head>
 <body>
 
-    <div class="container">
-        <h2>Formulario de Datos del Docente</h2>
-        <form id="formularioDocente" onsubmit="return almacenarDatos()">
-            <label for="nombre">Nombre del Docente:</label>
-            <input type="text" id="nombre" name="nombre" required>
+    <div class="sidebar">
+        <h2>Docentes</h2>
+        <a href="#" onclick="showDocente('docente1')">Docente 1</a>
+        <a href="#" onclick="showDocente('docente2')">Docente 2</a>
+        <a href="#" onclick="showDocente('docente3')">Docente 3</a>
+        <a href="#" onclick="showDocente('docente4')">Docente 4</a>
+    </div>
 
-            <label for="materia">Materia que Imparte:</label>
-            <input type="text" id="materia" name="materia" required>
+    <div class="content">
+        <h1>Revisión de Docentes</h1>
 
-            <label for="experiencia">Años de Experiencia:</label>
-            <input type="number" id="experiencia" name="experiencia" required>
+        <div id="docente1" class="docente active">
+            <h2>Juan Pérez García</h2>
+            <p><strong>RFC:</strong> PGCJ900101HDFRJN01</p>
+            <p><strong>Materias:</strong> Matemáticas, Física</p>
+            <p><strong>Semestres:</strong> 1er, 2do</p>
+            <div class="horario">
+                <h3>Horario</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Día</th>
+                            <th>Hora</th>
+                            <th>Materia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lunes</td>
+                            <td>08:00 - 10:00</td>
+                            <td>Matemáticas</td>
+                        </tr>
+                        <tr>
+                            <td>Miércoles</td>
+                            <td>10:00 - 12:00</td>
+                            <td>Física</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-            <label for="correo">Correo Electrónico:</label>
-            <input type="email" id="correo" name="correo" required>
+        <div id="docente2" class="docente">
+            <h2>María Lopez Hernández</h2>
+            <p><strong>RFC:</strong> LHM900202HDFRZN02</p>
+            <p><strong>Materias:</strong> Química, Biología</p>
+            <p><strong>Semestres:</strong> 1er, 3er</p>
+            <div class="horario">
+                <h3>Horario</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Día</th>
+                            <th>Hora</th>
+                            <th>Materia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Martes</td>
+                            <td>09:00 - 11:00</td>
+                            <td>Química</td>
+                        </tr>
+                        <tr>
+                            <td>Jueves</td>
+                            <td>11:00 - 13:00</td>
+                            <td>Biología</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-            <label for="descripcion">Descripción:</label>
-            <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+        <div id="docente3" class="docente">
+            <h2>Carlos Martínez Rodríguez</h2>
+            <p><strong>RFC:</strong> MRCG900303HDFRLD03</p>
+            <p><strong>Materias:</strong> Historia, Geografía</p>
+            <p><strong>Semestres:</strong> 2do, 4to</p>
+            <div class="horario">
+                <h3>Horario</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Día</th>
+                            <th>Hora</th>
+                            <th>Materia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lunes</td>
+                            <td>10:00 - 12:00</td>
+                            <td>Historia</td>
+                        </tr>
+                        <tr>
+                            <td>Viernes</td>
+                            <td>12:00 - 14:00</td>
+                            <td>Geografía</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-            <button type="submit">Enviar Datos</button>
-        </form>
-
-        <div class="result" id="resultado">
-            <h3>Datos del Docente:</h3>
-            <p><strong>Nombre:</strong> <span id="resultadoNombre"></span></p>
-            <p><strong>Materia:</strong> <span id="resultadoMateria"></span></p>
-            <p><strong>Experiencia:</strong> <span id="resultadoExperiencia"></span></p>
-            <p><strong>Correo:</strong> <span id="resultadoCorreo"></span></p>
-            <p><strong>Descripción:</strong> <span id="resultadoDescripcion"></span></p>
+        <div id="docente4" class="docente">
+            <h2>Luisa Fernández Martín</h2>
+            <p><strong>RFC:</strong> FML900404HDFRMT04</p>
+            <p><strong>Materias:</strong> Inglés, Literatura</p>
+            <p><strong>Semestres:</strong> 3er, 4to</p>
+            <div class="horario">
+                <h3>Horario</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Día</th>
+                            <th>Hora</th>
+                            <th>Materia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Martes</td>
+                            <td>08:00 - 10:00</td>
+                            <td>Inglés</td>
+                        </tr>
+                        <tr>
+                            <td>Jueves</td>
+                            <td>10:00 - 12:00</td>
+                            <td>Literatura</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
     <script>
-        function almacenarDatos() {
-            // Obtener los valores del formulario
-            const nombre = document.getElementById('nombre').value;
-            const materia = document.getElementById('materia').value;
-            const experiencia = document.getElementById('experiencia').value;
-            const correo = document.getElementById('correo').value;
-            const descripcion = document.getElementById('descripcion').value;
+        function showDocente(docenteId) {
+            // Ocultar todos los docentes
+            const docentes = document.querySelectorAll('.docente');
+            docentes.forEach(docente => {
+                docente.classList.remove('active');
+            });
 
-            // Mostrar los datos en la sección de resultados
-            document.getElementById('resultadoNombre').innerText = nombre;
-            document.getElementById('resultadoMateria').innerText = materia;
-            document.getElementById('resultadoExperiencia').innerText = experiencia;
-            document.getElementById('resultadoCorreo').innerText = correo;
-            document.getElementById('resultadoDescripcion').innerText = descripcion;
-
-            // Mostrar la sección de resultados
-            document.getElementById('resultado').style.display = 'block';
-
-            // Evitar que el formulario se recargue
-            return false;
+            // Mostrar el docente seleccionado
+            document.getElementById(docenteId).classList.add('active');
         }
     </script>
 
