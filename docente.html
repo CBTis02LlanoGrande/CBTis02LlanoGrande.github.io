@@ -3,160 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/estylos3.css">
-    <title>Revisión de Docentes</title>
-   
-    </head>
+        <link rel="stylesheet" href="css/estylos3.css">
+    <title>Docente</title>
+</head>
 <body>
 
-    <div class="sidebar">
-        <h2>Docentes</h2>
-        <a href="#" onclick="showDocente('docente1')">Docente 1</a>
-        <a href="#" onclick="showDocente('docente2')">Docente 2</a>
-        <a href="#" onclick="showDocente('docente3')">Docente 3</a>
-        <a href="#" onclick="showDocente('docente4')">Docente 4</a>
+<div class="conn">
+    <center><h2>Control de Evaluación y Acreditación</h2>
+     <b>Centro de Bachillerato Tecnológico Industrial y de Servicios No.2-01</b></center>
+    
+</div>
+
+    <div class="banner">
+        <img src="img/cb.png" alt="Banner de Administración de Docentes">
+
+         <img src="img/cinta.123.png" alt="Imagen de fondo" class="cinta">   
+         <img class="video-container" src="img/edg.png" style= width="100%">
     </div>
 
-    <div class="content">
-        <h1>Revisión de Docentes</h1>
+    <div class="menu">
+        <h1>Semestral</h1>
+        <a href="#" onclick="showContent('horario')">Horario</a>
+        <a href="#" onclick="showContent('grupos')">Mis Grupos</a>
+        <a href="#" onclick="showContent('password')">Contraseña</a>
+    </div>
 
-        <div id="docente1" class="docente active">
-            <h2>Juan Pérez García</h2>
-            <p><strong>RFC:</strong> PGCJ900101HDFRJN01</p>
-            <p><strong>Materias:</strong> Matemáticas, Física</p>
-            <p><strong>Semestres:</strong> 1er, 2do</p>
-            <div class="horario">
-                <h3>Horario</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Día</th>
-                            <th>Hora</th>
-                            <th>Materia</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Lunes</td>
-                            <td>08:00 - 10:00</td>
-                            <td>Matemáticas</td>
-                        </tr>
-                        <tr>
-                            <td>Miércoles</td>
-                            <td>10:00 - 12:00</td>
-                            <td>Física</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <div id="horario" class="content">
+        <a href="img/Hora.pdf" download>Descargar Horario PDF</a>
+   
+  <div class="horario-image" style="margin-top: 20px;">
+            <img src="img/horario.png" alt="horario" style="max-width: 60%; height: auto;">
         </div>
+ </div>
+    <div id="grupos" class="content">
+        <h2 class="title">Mis Grupos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Número de Control</th>
+                    <th>Nombre Completo</th>
+                    <th>Semestre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>20190001</td>
+                    <td>Juan Pérez</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>20190002</td>
+                    <td>María López</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>20190003</td>
+                    <td>Carlos Martínez</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-        <div id="docente2" class="docente">
-            <h2>María Lopez Hernández</h2>
-            <p><strong>RFC:</strong> LHM900202HDFRZN02</p>
-            <p><strong>Materias:</strong> Química, Biología</p>
-            <p><strong>Semestres:</strong> 1er, 3er</p>
-            <div class="horario">
-                <h3>Horario</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Día</th>
-                            <th>Hora</th>
-                            <th>Materia</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Martes</td>
-                            <td>09:00 - 11:00</td>
-                            <td>Química</td>
-                        </tr>
-                        <tr>
-                            <td>Jueves</td>
-                            <td>11:00 - 13:00</td>
-                            <td>Biología</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div id="docente3" class="docente">
-            <h2>Carlos Martínez Rodríguez</h2>
-            <p><strong>RFC:</strong> MRCG900303HDFRLD03</p>
-            <p><strong>Materias:</strong> Historia, Geografía</p>
-            <p><strong>Semestres:</strong> 2do, 4to</p>
-            <div class="horario">
-                <h3>Horario</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Día</th>
-                            <th>Hora</th>
-                            <th>Materia</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Lunes</td>
-                            <td>10:00 - 12:00</td>
-                            <td>Historia</td>
-                        </tr>
-                        <tr>
-                            <td>Viernes</td>
-                            <td>12:00 - 14:00</td>
-                            <td>Geografía</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div id="docente4" class="docente">
-            <h2>Luisa Fernández Martín</h2>
-            <p><strong>RFC:</strong> FML900404HDFRMT04</p>
-            <p><strong>Materias:</strong> Inglés, Literatura</p>
-            <p><strong>Semestres:</strong> 3er, 4to</p>
-            <div class="horario">
-                <h3>Horario</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Día</th>
-                            <th>Hora</th>
-                            <th>Materia</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Martes</td>
-                            <td>08:00 - 10:00</td>
-                            <td>Inglés</td>
-                        </tr>
-                        <tr>
-                            <td>Jueves</td>
-                            <td>10:00 - 12:00</td>
-                            <td>Literatura</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+    <div id="password" class="content">
+        <h2 class="title">Cambiar Contraseña</h2>
+        <form id="passwordForm" onsubmit="changePassword(event)">
+            <label for="currentPassword">Contraseña Actual:</label>
+            <input type="password" id="currentPassword" maxlength="8" required>
+            <label for="newPassword">Contraseña Nueva:</label>
+            <input type="password" id="newPassword" maxlength="8" required>
+            <label for="confirmPassword">Confirmar Contraseña:</label>
+            <input type="password" id="confirmPassword" maxlength="8" required>
+            <button type="submit">Cambiar Contraseña</button>
+        </form>
     </div>
 
     <script>
-        function showDocente(docenteId) {
-            // Ocultar todos los docentes
-            const docentes = document.querySelectorAll('.docente');
-            docentes.forEach(docente => {
-                docente.classList.remove('active');
-            });
+        function showContent(section) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.classList.remove('active'));
+            document.getElementById(section).classList.add('active');
+        }
 
-            // Mostrar el docente seleccionado
-            document.getElementById(docenteId).classList.add('active');
+        function changePassword(event) {
+            event.preventDefault();
+            alert('Contraseña cambiada con éxito');
         }
     </script>
-
 </body>
 </html>
