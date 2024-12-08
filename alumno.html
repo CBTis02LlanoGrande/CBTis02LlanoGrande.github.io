@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylos4.css">
+    <title>Alumno</title>
+</head>
+<body>
+
+<div class="conn">
+    <center> <h2>Control de Evaluación y Acreditación</h2>
+     <b>Centro de Bachillerato Tecnológico Industrial y de Servicios No.2-01</b></center>
+</div>
+
+    <div class="banner">
+        <img src="img/cb.png" alt="Banner de Administración de Docentes">
+
+
+        <img src="img/cinta.123.png" alt="Imagen de fondo" class="cinta">   
+        <img class="video-container" src="img/edg.png" style="width: 50%;"></img>
+
+
+    </div>
+
+    <div class="menu">
+        <h1>Semestral</h1>
+        <a href="#" onclick="showContent('horario')">Mi Horario</a>
+        <a href="#" onclick="showContent('grupos')">Mis Grupos</a>
+        <a href="#" onclick="showContent('password')">Contraseña</a>
+    </div>
+
+    <div id="horario" class="content">
+        <a href="img/Hora.pdf" download>Descargar Horario PDF</a>
+
+        <div class="horario-image" style="margin-top: 20px;">
+            <img src="img/horario.png" alt="horario" style="max-width: 60%; height: auto;">
+        </div>
+    
+</div>
+
+
+    <div id="grupos" class="content">
+        <h2 class="title">Mis Grupos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Número de Control</th>
+                    <th>Nombre Completo</th>
+                    <th>Semestre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>20190001</td>
+                    <td>Juan Pérez</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>20190002</td>
+                    <td>María López</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>20190003</td>
+                    <td>Carlos Martínez</td>
+                    <td>2</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="password" class="content">
+        <div class="password-container">
+            <h2 class="title">Cambio de Contraseña</h2>
+            <form id="passwordForm" onsubmit="changePassword(event)">
+                <label for="currentPassword">Contraseña Actual:</label>
+                <input type="password" id="currentPassword" maxlength="8" required>
+                <label for="newPassword">Contraseña Nueva:</label>
+                <input type="password" id="newPassword" maxlength="8" required>
+                <label for="confirmPassword">Confirmar Contraseña:</label>
+                <input type="password" id="confirmPassword" maxlength="8" required>
+                <button type="submit">Cambiar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showContent(section) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.classList.remove('active'));
+            document.getElementById(section).classList.add('active');
+        }
+
+        function changePassword(event) {
+            event.preventDefault();
+            alert('Contraseña cambiada con éxito');
+        }
+    </script>
+</body>
+</html>
