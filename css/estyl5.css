@@ -1,0 +1,95 @@
+/* Reset de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e9c0a2;
+    color: #7b7172;
+}
+
+/* Estilos de encabezado y navegación */
+header {
+    background-color: #691C32;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para las secciones */
+section {
+    padding: 40px 20px;
+    margin: 20px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+}
+
+section h2 {
+    color: #0066cc;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.programa {
+    margin-bottom: 20px;
+}
+
+.programa h3 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Estilo del pie de página */
+footer {
+    background-color: #691C32;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 40px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        margin: 10px;
+    }
+}
