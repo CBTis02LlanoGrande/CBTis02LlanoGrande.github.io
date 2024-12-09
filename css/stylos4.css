@@ -5,7 +5,6 @@
             background-color: #cf8e4e;
         }
         .banner {
-
             width: 100%;
             overflow: hidden; /* Previene el desbordamiento */
             position: relative;
@@ -49,6 +48,7 @@
             margin-left: 220px;
             padding: 20px;
             display: none;
+
         }
         .active {
             display: block;
@@ -57,7 +57,8 @@
             font-size: 20px;
             margin: 10px 0;
             text-align: center;
-        }
+                    }
+
         label {
             display: block;
             margin: 5px 0 2px;
@@ -92,45 +93,8 @@
             background-color: #f2f2f2;
         }
 
-        .cinta {   
-  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
-  height: auto; /* Mantiene la relación de aspecto */  
+      
 
-}
-
-img {
-    width: 100%;
-    height: auto;
-}
-
-
-.cin {
-    top:-232px;
-  position: absolute; /* Permite usar posicionamiento absoluto en los elementos hijos */
-  display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: center; /* Centra el contenido verticalmente */
-  height: 100vh; /* Hace que el contenedor ocupe toda la altura de la ventana */
-  position: relative;
-
-}
-
-.video-container {
-    object-position:center; 
-    object-fit:cover;
-    width: 90px; /* Ajusta el tamaño según sea necesario */
-    height: 90px; /* Ajusta el tamaño según sea necesario */
-    border-radius: 50%; /* Hace que el contenedor sea redondo */
-    overflow: hidden; /* Oculta el desbordamiento */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #FFFFFF; /* Opcional: borde alrededor */
-    margin-top: 5px; /* Espacio superior */
-    position: absolute;  
-    width: 50px; /* Tamaño reducido de la imagen */
-    height: 50px; /* Tamaño reducido de la imagen */
-}
         .password-container {
     display: flex;
     flex-direction: column;
@@ -203,3 +167,11 @@ body {
     height: 50px; /*tamaño de la altura*/
     
  }
+
+
+ /* Estilos para la imagen de la cinta */
+.cinta {   
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  height: auto; /* Mantiene la relación de aspecto */  
+
+}
