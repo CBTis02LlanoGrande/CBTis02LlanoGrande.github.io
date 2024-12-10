@@ -1,41 +1,44 @@
-       body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #e9c0a2;
-        }
-        .banner {
-            width: 100%;
-            overflow: hidden; /* Previene el desbordamiento */
-            position: relative;
-        }
-        .banner img {
-            width: 100%; /* Hace que la imagen ocupe todo el ancho */
-            height: auto; /* Mantiene la proporción de la imagen */
-            display: block; /* Elimina el espacio inferior en imágenes */
-        }
-        .banner h1 {
-            position: absolute;
-            top: 20px; /* Ajusta la posición del texto */
-            left: 50%;
-            transform: translateX(-50%); /* Centra el texto horizontalmente */
-            color: white; /* Color del texto */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para destacar el texto */
-        }
-        .menu {
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e9c0a2;
+}
+
+.banner {
+    width: 100%;
+    overflow: hidden; /* Previene el desbordamiento */
+    position: relative;
+}
+
+.banner img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina el espacio inferior en imágenes */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsionarla */
+}
+
+.banner h1 {
+    position: absolute;
+    top: 20px; /* Ajusta la posición del texto */
+    left: 50%;
+    transform: translateX(-50%); /* Centra el texto horizontalmente */
+    color: white; /* Color del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para destacar el texto */
+}
+
+ .menu {
             background-color: #9c9ba0;
-            color: white;
+            color: #8b1f2f;
             padding: 15px;
             width: 200px;
             position: absolute;
             height: 100%;
-            color: #8b1f2f;
         }
         .menu h1 {
             font-size: 20px;
             margin: 0 0 20px;
             text-align: center;
-
         }
         .menu a {
             color: white;
@@ -46,102 +49,134 @@
         .menu a:hover {
             background-color: #575757;
         }
-        .content {
-            margin-left: 220px;
-            padding: 20px;
-            display: none;
-        }
-        .active {
-            display: block;
-        }
-        .title {
-            font-size: 20px;
-            margin: 10px 0;
-            text-align: center;
-        }
-        label {
-            display: block;
-            margin: 5px 0 2px;
-        }
-        input[type="password"] {
-            width: 200px;
-            padding: 5px;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-        button {
-            padding: 10px 15px;
-            background-color: #5cb85c;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #4cae4c;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
 
-        .cinta {  
-  
-  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
-  height: auto; /* Mantiene la relación de aspecto */  
-
+.content {
+    margin-left: 220px; /* Compensa el espacio ocupado por el menú */
+    padding: 20px;
+    display: none;
 }
 
-foto {
+.active {
+    display: block;
+}
+
+.title {
+    font-size: 20px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 5px 0 2px;
+}
+
+input[type="password"] {
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #8b1f2f;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e9c0a2;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+
+ /* Contenedor que mantendrá las imágenes alineadas */
+.contenedor {
+    position: relative;
+    display: inline-block;
+}
+
+/* Imagen de fondo que ocupa toda el área */
+.fondo {
     width: 100%;
     height: auto;
 }
 
+/* Imagen que irá centrada y será redonda */
+.imagen-centro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%; /* Hace la imagen redonda */
+    width: 120px; /* Ajusta el tamaño de la imagen */
+    height: 120px; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Asegura que la imagen se ajuste al contorno circular */
+}
 
+
+.horario-image {
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Conexión superior */
+.conn {
+    height: 40px;
+    color: white;
+    background-color: #cf8e4e;
+    text-align: center;
+    line-height: 40px; /* Centra el texto verticalmente */
+}
+
+/* Clase cin (ajustada para la ubicación) */
 .cin {
-    top:-232px;
-  position: absolute; /* Permite usar posicionamiento absoluto en los elementos hijos */
-  display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: center; /* Centra el contenido verticalmente */
-  height: 100vh; /* Hace que el contenedor ocupe toda la altura de la ventana */
-  position: relative;
-
-}
-
-.video-container {
-    object-position:center; 
-    object-fit:cover;
-    width: 110px; /* Ajusta el tamaño según sea necesario */
-    height: 110px; /* Ajusta el tamaño según sea necesario */
-    border-radius: 50%; /* Hace que el contenedor sea redondo */
-    overflow: hidden; /* Oculta el desbordamiento */
+    position: absolute; /* Permite usar posicionamiento absoluto en los elementos hijos */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #FFFFFF; /* Opcional: borde alrededor */
-    margin-top: 5px; /* Espacio superior */
-    position: absolute;  
-    width: 100px; /* Tamaño reducido de la imagen */
-    height: 100px; /* Tamaño reducido de la imagen */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    height: 100vh; /* Hace que el contenedor ocupe toda la altura de la ventana */
+    width: 100%; /* Asegura que ocupe todo el ancho */
 }
 
-.horario-image{
- text-align: center; 
- margin: 0 auto;
+/* Media Queries para Responsividad */
+@media screen and (max-width: 768px) {
+    .menu {
+        width: 100%; /* El menú ocupa todo el ancho en pantallas pequeñas */
+        position: relative;
+        height: auto;
+    }
+
+    .menu a {
+        font-size: 14px; /* Reducir el tamaño de la fuente en pantallas pequeñas */
+        padding: 10px;
+    }
+
+    .content {
+        margin-left: 0; /* El contenido ocupa todo el ancho disponible */
+    }
+
+    .foto {
+        width: 80px; /* Ajusta el tamaño de la foto en pantallas pequeñas */
+        height: 80px;
+    }
 }
 
-  .conn{ 
-    height: 40px; /*tamaño de la altura*/
-    color: white; /*color de las letras del banner*/
-    background-color: #cf8e4e; 
-     
- }
+
