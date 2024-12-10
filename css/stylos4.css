@@ -110,7 +110,7 @@
     padding: 20px; /* Espacio interno */
     border: 2px solid #7b7172; /* Color del contorno */
     border-radius: 10px; /* Bordes redondeados */
-    background-color: #e9c0a2; /* Color de fondo */
+    background-color: #9c9ba0; /* Color de fondo */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
 }
 
@@ -169,9 +169,89 @@ body {
  }
 
 
- /* Estilos para la imagen de la cinta */
-.cinta {   
-  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
-  height: auto; /* Mantiene la relación de aspecto */  
+.content {
+            margin-left: 220px;
+            padding: 20px;
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .title {
+            font-size: 20px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        button {
+            padding:  15px ;
+            background-color: #8b1f2f; /* Color del botón */
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            float: left;
 
+        }
+        button:hover {
+            background-color: #9c9ba0; /* Hover color */
+        }
+        .group-container {
+            border: 2px solid #9c9ba0; 
+            background-color: #e9c0a2; 
+            padding: 60px;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 300px; 
+            max-width: 300px; /* Ancho mínimo para el botón */
+        }
+        .results-container {
+            margin-top: 40px;
+            text-align: center;
+            display: none; /* Ocultar por defecto */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden; /* Para aplicar bordes redondeados */
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #8b1f2f; /* Color de encabezados */
+            font-weight: bold;
+            color: white; /* Texto blanco en encabezados */
+        }
+        tr:hover {
+            background-color: #9c9ba0; /* Color al pasar el mouse */
+        }
+
+         /* Contenedor que mantendrá las imágenes alineadas */
+.contenedor {
+    position: relative;
+    display: inline-block;
+}
+
+/* Imagen de fondo que ocupa toda el área */
+.fondo {
+    width: 100%;
+    height: auto;
+}
+
+/* Imagen que irá centrada y será redonda */
+.imagen-centro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%; /* Hace la imagen redonda */
+    width: 120px; /* Ajusta el tamaño de la imagen */
+    height: 120px; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Asegura que la imagen se ajuste al contorno circular */
 }
