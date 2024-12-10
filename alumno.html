@@ -16,11 +16,13 @@
     <div class="banner">
         <img src="img/banner1.jpg" alt="Banner de Administración de Docentes">
 
+</div>
 
-        <img src="img/cinta.123.png" alt="Imagen de fondo" class="cinta">   
-
-
+     <div class="contenedor">
+        <img src="img/cinta.123.png" alt="Imagen de fondo" class="fondo">
+        <img src="img/nin.jpg" alt="Imagen encima" class="imagen-centro">
     </div>
+  
 
     <div class="menu">
         <h1>Semestral</h1>
@@ -38,7 +40,26 @@
     
 </div>
 
-
+<div id="grupos" class="content">
+    <div class="group-container" id="selectionContainer">
+        <h2 class="title">Mis Grupos</h2>
+        <div class="options-container">
+            <label>
+                <input type="radio" name="grupo" value="basicas"> Básicas
+            </label>
+            <label>
+                <input type="radio" name="grupo" value="especialidad"> Especialidad
+            </label>
+            <br>
+            <button onclick="mostrarInformacion()">Aceptar</button>
+        </div>
+    </div>
+    <div id="results" class="results-container">
+        <h2 class="title">Resultados</h2>
+        <div id="resultData" class="results"></div>
+        <button onclick="regresar()">Regresar</button>
+    </div>
+</div>
     <div id="grupos" class="content">
         <h2 class="title">Mis Grupos</h2>
         <table>
@@ -53,20 +74,26 @@
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td>20190001</td>
-                    <td>Juan Pérez</td>
+                    <td>20671</td>
+                    <td>Julissa Serrano Bonilla</td>
                     <td>4</td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>20190002</td>
-                    <td>María López</td>
+                    <td>Liliana Torres de la Cruz</td>
                     <td>3</td>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>20190003</td>
-                    <td>Carlos Martínez</td>
+                    <td>20678</td>
+                    <td>Elvia E. Morales</td>
+                    <td>2</td>
+                </tr>
+                 <tr>
+                    <td>4</td>
+                    <td>20675</td>
+                    <td>Nicolas Dominguez Santiago</td>
                     <td>2</td>
                 </tr>
             </tbody>
@@ -99,6 +126,99 @@
             event.preventDefault();
             alert('Contraseña cambiada con éxito');
         }
-    </script>
+
+          function mostrarInformacion() {
+        const selectedOption = document.querySelector('input[name="grupo"]:checked');
+        const resultDataDiv = document.getElementById('resultData');
+        const resultsContainer = document.getElementById('results');
+        const selectionContainer = document.getElementById('selectionContainer');
+
+        if (selectedOption) {
+            selectionContainer.style.display = 'none'; // Ocultar opciones
+            resultsContainer.style.display = 'block'; // Mostrar contenedor de resultados
+
+            if (selectedOption.value === 'basicas') {
+                resultDataDiv.innerHTML = `
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Materia</th>
+                                <th>Grupo</th>
+                                <th>Alumnos Inscritos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Soporte</td>
+                                <td>1A</td>
+                                <td>30</td>
+                            </tr>
+                            <tr>
+                                <td>Física</td>
+                                <td>1B</td>
+                                <td>25</td>
+                            </tr>
+                            <tr>
+                                <td>Contabilidad</td>
+                                <td>1A</td>
+                                <td>28</td>
+                            </tr>
+                            <tr>
+                                <td>Inglés</td>
+                                <td>1C</td>
+                                <td>22</td>
+                            </tr>
+                        </tbody>
+                    </table>`;
+            } else if (selectedOption.value === 'especialidad') {
+                resultDataDiv.innerHTML = `
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Número de Control</th>
+                                <th>Nombre Completo</th>
+                                <th>Semestre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>20671</td>
+                                <td>Julissa Serrano Bonilla</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>20675</td>
+                                <td>Nicolas Dominguez Santiago</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>20679</td>
+                                <td>Liliana Torres de la Cruz</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>20645</td>
+                                <td>Elvia E. Morales</td>
+                                <td>5</td>
+                            </tr>
+                        </tbody>
+                    </table>`;
+            }
+        } else {
+            alert('Por favor, selecciona una opción.');
+        }
+    }
+      function regresar() {
+        document.getElementById('selectionContainer').style.display = 'block'; // Mostrar opciones
+        document.getElementById('results').style.display = 'none'; // Ocultar resultados
+        document.querySelector('input[name="grupo"]:checked').checked = false; // Desmarcar opción
+        document.getElementById('resultData').innerHTML = ''; // Limpiar resultados
+    }
+</script>
 </body>
 </html>
