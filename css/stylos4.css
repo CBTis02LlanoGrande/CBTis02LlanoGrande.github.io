@@ -1,29 +1,34 @@
- body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #cf8e4e;
-        }
-        .banner {
-            width: 100%;
-            overflow: hidden; /* Previene el desbordamiento */
-            position: relative;
-        }
-        .banner img {
-            width: 100%; /* Hace que la imagen ocupe todo el ancho */
-            height: auto; /* Mantiene la proporción de la imagen */
-            display: block; /* Elimina el espacio inferior en imágenes */
-        }
-        .banner h1 {
-            position: absolute;
-            top: 20px; /* Ajusta la posición del texto */
-            left: 50%;
-            transform: translateX(-50%); /* Centra el texto horizontalmente */
-            color: white; /* Color del texto */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para destacar el texto */
-        }
-        .menu {
-            background-color: #7b7172;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e9c0a2;
+}
+
+.banner {
+    width: 100%;
+    overflow: hidden; /* Previene el desbordamiento */
+    position: relative;
+}
+
+.banner img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina el espacio inferior en imágenes */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsionarla */
+}
+
+.banner h1 {
+    position: absolute;
+    top: 20px; /* Ajusta la posición del texto */
+    left: 50%;
+    transform: translateX(-50%); /* Centra el texto horizontalmente */
+    color: white; /* Color del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para destacar el texto */
+}
+
+ .menu {
+            background-color: #9c9ba0;
             color: #8b1f2f;
             padding: 15px;
             width: 200px;
@@ -44,195 +49,65 @@
         .menu a:hover {
             background-color: #575757;
         }
-        .content {
-            margin-left: 220px;
-            padding: 20px;
-            display: none;
 
-        }
-        .active {
-            display: block;
-        }
-        .title {
-            font-size: 20px;
-            margin: 10px 0;
-            text-align: center;
-                    }
-
-        label {
-            display: block;
-            margin: 5px 0 2px;
-        }
-        input[type="password"] {
-            width: 200px;
-            padding: 5px;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-        button {
-            padding: 10px 15px;
-            background-color: #5cb85c;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #4cae4c;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-
-      
-
-        .password-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Ocupa toda la altura de la ventana */
+.content {
+    margin-left: 220px; /* Compensa el espacio ocupado por el menú */
+    padding: 20px;
+    display: none;
 }
 
-.password-container form {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra los elementos dentro del formulario */
-    padding: 20px; /* Espacio interno */
-    border: 2px solid #7b7172; /* Color del contorno */
-    border-radius: 10px; /* Bordes redondeados */
-    background-color: #9c9ba0; /* Color de fondo */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+.active {
+    display: block;
+}
+
+.title {
+    font-size: 20px;
+    margin: 10px 0;
+    text-align: center;
 }
 
 label {
-    margin: 10px 0 5px; /* Espaciado entre las etiquetas y los campos */
-    align-self: flex-start; /* Alinea las etiquetas a la izquierda */
-    width: 100%; /* Ocupar todo el ancho disponible */
-    text-align: left; /* Alineación del texto a la izquierda */
+    display: block;
+    margin: 5px 0 2px;
 }
 
 input[type="password"] {
     width: 200px;
-    padding: 10px; /* Espacio interno en los campos */
+    padding: 5px;
     margin-bottom: 10px;
     font-size: 14px;
-    border: 1px solid #ccc; /* Borde de los campos */
-    border-radius: 5px; /* Bordes redondeados en los campos */
 }
 
 button {
-    margin-top: 10px; /* Espacio entre el formulario y el botón */
     padding: 10px 15px;
-    background-color: #691C32;
+    background-color: #8b1f2f;
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 5px; /* Bordes redondeados en el botón */
-    width: 50%; /* Hace que el botón ocupe todo el ancho del formulario */
 }
 
 button:hover {
-    background-color: #6F7271;
+    background-color: #e9c0a2;
 }
 
-.horario-image{
- text-align: center; 
- margin: 0 auto;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-     * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
 }
 
-body {
-    font-family: Arial, sans-serif;
+th {
+    background-color: #f2f2f2;
 }
 
 
-  .conn{ 
-    color: white; /*color de las letras del banner*/
-    background-color: #7b7172; 
-    height: 50px; /*tamaño de la altura*/
-    
- }
-
-
-.content {
-            margin-left: 220px;
-            padding: 20px;
-            display: none;
-        }
-        .active {
-            display: block;
-        }
-        .title {
-            font-size: 20px;
-            margin: 10px 0;
-            text-align: center;
-        }
-        button {
-            padding:  15px ;
-            background-color: #8b1f2f; /* Color del botón */
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            float: left;
-
-        }
-        button:hover {
-            background-color: #9c9ba0; /* Hover color */
-        }
-        .group-container {
-            border: 2px solid #9c9ba0; 
-            background-color: #e9c0a2; 
-            padding: 60px;
-            border-radius: 8px;
-            margin: 20px auto;
-            max-width: 300px; 
-            max-width: 300px; /* Ancho mínimo para el botón */
-        }
-        .results-container {
-            margin-top: 40px;
-            text-align: center;
-            display: none; /* Ocultar por defecto */
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden; /* Para aplicar bordes redondeados */
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #8b1f2f; /* Color de encabezados */
-            font-weight: bold;
-            color: white; /* Texto blanco en encabezados */
-        }
-        tr:hover {
-            background-color: #9c9ba0; /* Color al pasar el mouse */
-        }
-
-         /* Contenedor que mantendrá las imágenes alineadas */
+ /* Contenedor que mantendrá las imágenes alineadas */
 .contenedor {
     position: relative;
     display: inline-block;
@@ -255,3 +130,53 @@ body {
     height: 120px; /* Mantiene la proporción de la imagen */
     object-fit: cover; /* Asegura que la imagen se ajuste al contorno circular */
 }
+
+
+.horario-image {
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Conexión superior */
+.conn {
+    height: 40px;
+    color: white;
+    background-color: #cf8e4e;
+    text-align: center;
+    line-height: 40px; /* Centra el texto verticalmente */
+}
+
+/* Clase cin (ajustada para la ubicación) */
+.cin {
+    position: absolute; /* Permite usar posicionamiento absoluto en los elementos hijos */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    height: 100vh; /* Hace que el contenedor ocupe toda la altura de la ventana */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+/* Media Queries para Responsividad */
+@media screen and (max-width: 768px) {
+    .menu {
+        width: 100%; /* El menú ocupa todo el ancho en pantallas pequeñas */
+        position: relative;
+        height: auto;
+    }
+
+    .menu a {
+        font-size: 14px; /* Reducir el tamaño de la fuente en pantallas pequeñas */
+        padding: 10px;
+    }
+
+    .content {
+        margin-left: 0; /* El contenido ocupa todo el ancho disponible */
+    }
+
+    .foto {
+        width: 80px; /* Ajusta el tamaño de la foto en pantallas pequeñas */
+        height: 80px;
+    }
+}
+
+
