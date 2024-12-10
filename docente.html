@@ -103,103 +103,23 @@
 
 <div id="cea" class="content">
     <h2 class="title">Opciones de CEA</h2>
-    <div class="options-container">
-        <label><input type="radio" name="ceaOption" value="planeacion"> Planeación del Curso</label><br>
-        <label><input type="radio" name="ceaOption" value="calificacion"> Captura de Calificación</label><br>
-        <label><input type="radio" name="ceaOption" value="evaluaciones"> Evaluaciones</label><br>
+    <div class="options-container" id="ceaOptions">
+        <label><input type="radio" name="ceaOption" value="planeacion" onchange="mostrarInformacionCEA()"> Planeación del Curso</label><br>
+        <label><input type="radio" name="ceaOption" value="calificacion" onchange="mostrarInformacionCEA()"> Captura de Calificación</label><br>
+        <label><input type="radio" name="ceaOption" value="evaluaciones" onchange="mostrarInformacionCEA()"> Evaluaciones</label><br>
     </div>
-    <button onclick="acceder()">Acceder</button>
-    <div id="infoCEA" class="info"></div>
+    <div id="infoCEA" class="info" style="display:none;"></div>
+    <button id="regresarCEA" style="display:none;" onclick="volverACea()">Regresar</button>
 </div>
 
 <script>
-    let selectedGrupo = null;
-
     function showContent(section) {
         const contents = document.querySelectorAll('.content');
-        contents.forEach(content => content.classList.remove('active'));
-        document.getElementById(section).classList.add('active');
-        if(section === 'cea') {
-            document.getElementById('infoCEA').innerHTML = ''; // Limpiar información previa
-        }
+        contents.forEach(content => content.style.display = 'none');
+        document.getElementById(section).style.display = 'block';
     }
 
-    function mostrarInformacion() {
-        const options = document.getElementsByName('grupo');
-        for (let option of options) {
-            if (option.checked) {
-                selectedGrupo = option.value;
-                break;
-            }
-        }
-
-        const infoDiv = document.getElementById('infoGrupo');
-        const infoSection = document.getElementById('informacion');
-        if (selectedGrupo) {
-            switch (selectedGrupo) {
-                case 'basicas':
-                    infoDiv.innerHTML = `
-                        <h3>Materias Básicas</h3>
-                        <table>
-                            <tr>
-                                <th>Materia</th>
-                                <th>Descripción</th>
-                            </tr>
-                            <tr>
-                                <td>Física</td>
-                                <td>Estudio de fenómenos naturales y sus leyes.</td>
-                            </tr>
-                            <tr>
-                                <td>Pensamiento Matemático</td>
-                                <td>Desarrollo de habilidades de resolución de problemas.</td>
-                            </tr>
-                            <tr>
-                                <td>Ciencias Sociales</td>
-                                <td>Estudio de la historia y la sociedad.</td>
-                            </tr>
-                            <tr>
-                                <td>Inglés</td>
-                                <td>Aprendizaje de un segundo idioma.</td>
-                            </tr>
-                        </table>
-                    `;
-                    break;
-                case 'especialidad':
-                    infoDiv.innerHTML = `
-                        <h3>Especialidades Disponibles</h3>
-                        <table>
-                            <tr>
-                                <th>Especialidad</th>
-                                <th>Descripción</th>
-                            </tr>
-                            <tr>
-                                <td>Contabilidad</td>
-                                <td>Capacitación en principios contables.</td>
-                            </tr>
-                            <tr>
-                                <td>Soporte y Mantenimiento</td>
-                                <td>Formación en mantenimiento de hardware y software.</td>
-                            </tr>
-                        </table>
-                    `;
-                    break;
-            }
-            showContent('informacion');
-        } else {
-            infoDiv.innerHTML = "<p>Por favor, seleccione una opción para ver la información.</p>";
-        }
-    }
-
-    function volverAGrupos() {
-        showContent('grupos'); // Volver a mostrar la sección de grupos
-    }
-
-    function changePassword(event) {
-        event.preventDefault();
-        alert('Contraseña cambiada con éxito');
-    }
-
-    function acceder() {
+    function mostrarInformacionCEA() {
         const options = document.getElementsByName('ceaOption');
         let selectedOption = null;
 
@@ -211,143 +131,91 @@
         }
 
         const infoDiv = document.getElementById('infoCEA');
-        if (selectedOption && selectedGrupo) {
+        const regresarButton = document.getElementById('regresarCEA');
+        const optionsContainer = document.getElementById('ceaOptions');
+
+        if (selectedOption) {
             let infoText = '';
-            if (selectedGrupo === 'basicas') {
-                switch (selectedOption) {
-                    case 'planeacion':
-                        infoText = `
-                            <h3>Planeación del Curso - Materias Básicas</h3>
-                            <table>
-                                <tr>
-                                    <th>Elemento</th>
-                                    <th>Descripción</th>
-                                </tr>
-                                <tr>
-                                    <td>Objetivos</td>
-                                    <td>Definición de metas educativas.</td>
-                                </tr>
-                                <tr>
-                                    <td>Contenidos</td>
-                                    <td>Temas a tratar durante el curso.</td>
-                                </tr>
-                                <tr>
-                                    <td>Evaluación</td>
-                                    <td>Criterios y métodos de evaluación.</td>
-                                </tr>
-                            </table>
-                        `;
-                        break;
-                    case 'calificacion':
-                        infoText = `
-                            <h3>Captura de Calificación - Materias Básicas</h3>
-                            <table>
-                                <tr>
-                                    <th>Aspecto</th>
-                                    <th>Descripción</th>
-                                </tr>
-                                <tr>
-                                    <td>Registro</td>
-                                    <td>Método de ingreso de calificaciones.</td>
-                                </tr>
-                                <tr>
-                                    <td>Reportes</td>
-                                    <td>Generación de reportes de rendimiento.</td>
-                                </tr>
-                            </table>
-                        `;
-                        break;
-                    case 'evaluaciones':
-                        infoText = `
-                            <h3>Evaluaciones - Materias Básicas</h3>
-                            <table>
-                                <tr>
-                                    <th>Tipo</th>
-                                    <th>Descripción</th>
-                                </tr>
-                                <tr>
-                                    <td>Exámenes</td>
-                                    <td>Pruebas escritas para evaluar conocimientos.</td>
-                                </tr>
-                                <tr>
-                                    <td>Proyectos</td>
-                                    <td>Trabajos prácticos que integran conocimientos.</td>
-                                </tr>
-                            </table>
-                        `;
-                        break;
-                }
-            } else if (selectedGrupo === 'especialidad') {
-                switch (selectedOption) {
-                    case 'planeacion':
-                        infoText = `
-                            <h3>Planeación del Curso - Especialidades</h3>
-                            <table>
-                                <tr>
-                                    <th>Elemento</th>
-                                    <th>Descripción</th>
-                                </tr>
-                                <tr>
-                                    <td>Objetivos</td>
-                                    <td>Definición de metas específicas para la especialidad.</td>
-                                </tr>
-                                <tr>
-                                    <td>Contenidos</td>
-                                    <td>Temas a tratar en la especialidad.</td>
-                                </tr>
-                                <tr>
-                                    <td>Evaluación</td>
-                                    <td>Métodos de evaluación específicos.</td>
-                                </tr>
-                            </table>
-                        `;
-                        break;
-                    case 'calificacion':
-                        infoText = `
-                            <h3>Captura de Calificación - Especialidades</h3>
-                            <table>
-                                <tr>
-                                    <th>Aspecto</th>
-                                    <th>Descripción</th>
-                                </tr>
-                                <tr>
-                                    <td>Registro</td>
-                                    <td>Ingreso de calificaciones por módulo.</td>
-                                </tr>
-                                <tr>
-                                    <td>Reportes</td>
-                                    <td>Reportes de desempeño en la especialidad.</td>
-                                </tr>
-                            </table>
-                        `;
-                        break;
-                    case 'evaluaciones':
-                        infoText = `
-                            <h3>Evaluaciones - Especialidades</h3>
-                            <table>
-                                <tr>
-                                    <th>Tipo</th>
-                                    <th>Descripción</th>
-                                </tr>
-                                <tr>
-                                    <td>Exámenes Prácticos</td>
-                                    <td>Evaluación de habilidades prácticas.</td>
-                                </tr>
-                                <tr>
-                                    <td>Proyectos</td>
-                                    <td>Desarrollo de proyectos aplicados a la especialidad.</td>
-                                </tr>
-                            </table>
-                        `;
-                        break;
-                }
+            switch (selectedOption) {
+                case 'planeacion':
+                    infoText = ` 
+                        <h3>Planeación del Curso</h3>
+                        <table>
+                            <tr>
+                                <th>Elemento</th>
+                                <th>Descripción</th>
+                            </tr>
+                            <tr>
+                                <td>Objetivos</td>
+                                <td>Definición de metas educativas.</td>
+                            </tr>
+                            <tr>
+                                <td>Contenidos</td>
+                                <td>Temas a tratar durante el curso.</td>
+                            </tr>
+                            <tr>
+                                <td>Evaluación</td>
+                                <td>Criterios y métodos de evaluación.</td>
+                            </tr>
+                        </table>
+                    `;
+                    break;
+                case 'calificacion':
+                    infoText = ` 
+                        <h3>Captura de Calificación</h3>
+                        <table>
+                            <tr>
+                                <th>Aspecto</th>
+                                <th>Descripción</th>
+                            </tr>
+                            <tr>
+                                <td>Registro</td>
+                                <td>Método de ingreso de calificaciones.</td>
+                            </tr>
+                            <tr>
+                                <td>Reportes</td>
+                                <td>Generación de reportes de rendimiento.</td>
+                            </tr>
+                        </table>
+                    `;
+                    break;
+                case 'evaluaciones':
+                    infoText = ` 
+                        <h3>Evaluaciones</h3>
+                        <table>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Descripción</th>
+                            </tr>
+                            <tr>
+                                <td>Exámenes</td>
+                                <td>Pruebas escritas para evaluar conocimientos.</td>
+                            </tr>
+                            <tr>
+                                <td>Proyectos</td>
+                                <td>Trabajos prácticos que integran conocimientos.</td>
+                            </tr>
+                        </table>
+                    `;
+                    break;
             }
 
-            infoDiv.innerHTML = infoText;
-            showContent('cea'); // Mostrar la sección de información de CEA
+            optionsContainer.style.display = 'none'; // Ocultar las opciones
+            infoDiv.innerHTML = infoText; // Mostrar información
+            infoDiv.style.display = 'block';
+            regresarButton.style.display = 'block'; // Mostrar solo el botón de regresar
         } else {
-            infoDiv.innerHTML = "<p>Por favor, seleccione una opción para acceder.</p>";
+            alert('Por favor, selecciona una opción para acceder.');
         }
+    }
+
+    function volverACea() {
+        const infoDiv = document.getElementById('infoCEA');
+        infoDiv.style.display = 'none'; // Ocultar la información
+        document.getElementById('regresarCEA').style.display = 'none'; // Ocultar el botón de regresar
+        const options = document.getElementsByName('ceaOption');
+        options.forEach(option => option.checked = false); // Desmarcar las opciones
+        document.getElementById('ceaOptions').style.display = 'block'; // Mostrar las opciones nuevamente
     }
 </script>
 
