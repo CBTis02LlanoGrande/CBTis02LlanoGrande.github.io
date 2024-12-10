@@ -177,7 +177,7 @@ nav ul li:hover .dropdown {
 
 /* Estilos para el contenedor principal */
 .cin {
-    top:-232px;
+  top:-232px;
   position: absolute; /* Permite usar posicionamiento absoluto en los elementos hijos */
   display: flex;
   justify-content: center; /* Centra el contenido horizontalmente */
@@ -188,8 +188,7 @@ nav ul li:hover .dropdown {
 }
 
 /* Estilos para la imagen de la cinta */
-.cinta {  
-  
+.cinta {   
   width: 100%; /* La imagen ocupa todo el ancho del contenedor */
   height: auto; /* Mantiene la relación de aspecto */  
 
@@ -217,7 +216,6 @@ video {
     height: 100px; /* Tamaño reducido de la imagen */
 }
 
-/* Restante del CSS que ya tienes */
 
 /* Estilos para el contenedor del formulario de login */
 .login-container {
