@@ -3,96 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/estylos3.css">
+    <link rel="stylesheet" href="css/estylos3.css">
     <title>Docente</title>
 </head>
 <body>
 
-<div class="conn">
-    <center><h2>Control de Evaluación y Acreditación</h2>
-<center>
+<div class="conn"> <h2>Control de Evaluación y Acreditación</h2></div>
+    <center><b>Centro de Bachillerato Tecnológico Industrial y de Servicios No.2-01</b></center>
     
+
+
+
+    <div class="contenedor">
+        <img src="img/cinta.123.png" alt="Imagen de fondo" class="fondo">
+        <img src="img/edg.png" alt="Imagen encima" class="imagen-centro">
+    </div>
+
+<div class="menu">
+    <h1>Semestral</h1>
+    <a href="#" onclick="showContent('horario')">Horario</a>
+    <a href="#" onclick="showContent('grupos')">Mis Grupos</a>
+    <a href="#" onclick="showContent('password')">Contraseña</a>  
+    <a href="#" onclick="showContent('cea')">CEA</a>
 </div>
 
-    <div class="banner">
-        <img src="img/cb.png" alt="Banner de Administración de Docentes">
-
-         <img src="img/cinta.123.png" alt="Imagen de fondo" class="cinta">   
-         <img class="video-container" src="img/edg.png" style= width="100%">
+<div id="horario" class="content">
+    <a href="img/Hora.pdf" download>Descargar Horario PDF</a>
+    <div class="horario-image" style="margin-top: 20px;">
+        <img src="img/horario.png" alt="horario" style="max-width: 80%; height: auto;">
     </div>
+</div>
 
-    <div class="menu">
-        <h1>Semestral</h1>
-        <a href="#" onclick="showContent('horario')">Horario</a>
-        <a href="#" onclick="showContent('grupos')">Mis Grupos</a>
-        <a href="#" onclick="showContent('password')">Contraseña</a>
+
+
+<div id="grupos" class="content">
+    <h2 class="title">Mis Grupos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Número de Control</th>
+                <th>Nombre Completo</th>
+                <th>Semestre</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>20190001</td>
+                <td>Juan Pérez</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>20190002</td>
+                <td>María López</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>20190003</td>
+                <td>Carlos Martínez</td>
+                <td>2</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="password" class="content">
+    <h2 class="title">Cambiar Contraseña</h2>
+    <form id="passwordForm" onsubmit="changePassword(event)">
+        <label for="currentPassword">Contraseña Actual:</label>
+        <input type="password" id="currentPassword" maxlength="8" required>
+        <label for="newPassword">Contraseña Nueva:</label>
+        <input type="password" id="newPassword" maxlength="8" required>
+        <label for="confirmPassword">Confirmar Contraseña:</label>
+        <input type="password" id="confirmPassword" maxlength="8" required>
+        <button type="submit">Cambiar Contraseña</button>
+    </form>
+</div>
+
+<div id="cea" class="content">
+    <h2 class="title">Opciones de CEA</h2>
+    <form id="ceaForm">
+        <label><input type="radio" name="ceaOption" value="planeacion"> Planeación del Curso</label><br>
+        <label><input type="radio" name="ceaOption" value="calificacion"> Captura de Calificación</label><br>
+        <label><input type="radio" name="ceaOption" value="evaluaciones"> Evaluaciones</label><br>
+    </form>
+    <button onclick="acceder()">Acceder</button>
+    <div id="info" class="info">
+        <!-- Información de las opciones seleccionadas aparecerá aquí -->
     </div>
+</div>
 
-    <div id="horario" class="content">
-        <a href="img/Hora.pdf" download>Descargar Horario PDF</a>
-   
-  <div class="horario-image" style="margin-top: 20px;">
-            <img src="img/horario.png" alt="horario" style="max-width: 60%; height: auto;">
-        </div>
- </div>
-    <div id="grupos" class="content">
-        <h2 class="title">Mis Grupos</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Número de Control</th>
-                    <th>Nombre Completo</th>
-                    <th>Semestre</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>20190001</td>
-                    <td>Juan Pérez</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>20190002</td>
-                    <td>María López</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>20190003</td>
-                    <td>Carlos Martínez</td>
-                    <td>2</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+<script>
+    function showContent(section) {
+        const contents = document.querySelectorAll('.content');
+        contents.forEach(content => content.classList.remove('active'));
+        document.getElementById(section).classList.add('active');
+    }
 
-    <div id="password" class="content">
-        <h2 class="title">Cambiar Contraseña</h2>
-        <form id="passwordForm" onsubmit="changePassword(event)">
-            <label for="currentPassword">Contraseña Actual:</label>
-            <input type="password" id="currentPassword" maxlength="8" required>
-            <label for="newPassword">Contraseña Nueva:</label>
-            <input type="password" id="newPassword" maxlength="8" required>
-            <label for="confirmPassword">Confirmar Contraseña:</label>
-            <input type="password" id="confirmPassword" maxlength="8" required>
-            <button type="submit">Cambiar Contraseña</button>
-        </form>
-    </div>
+    function changePassword(event) {
+        event.preventDefault();
+        alert('Contraseña cambiada con éxito');
+    }
 
-    <script>
-        function showContent(section) {
-            const contents = document.querySelectorAll('.content');
-            contents.forEach(content => content.classList.remove('active'));
-            document.getElementById(section).classList.add('active');
+    function acceder() {
+        const options = document.getElementsByName('ceaOption');
+        let selectedOption = null;
+
+        // Encontrar la opción seleccionada
+        for (let option of options) {
+            if (option.checked) {
+                selectedOption = option.value;
+                break;
+            }
         }
 
-        function changePassword(event) {
-            event.preventDefault();
-            alert('Contraseña cambiada con éxito');
+        // Mostrar la información correspondiente
+        const infoDiv = document.getElementById('info');
+        if (selectedOption) {
+            switch (selectedOption) {
+                case 'planeacion':
+                    infoDiv.innerHTML = "<h3>Planeación del Curso</h3><p>Aquí va la información sobre la planeación del curso...</p>";
+                    break;
+                case 'calificacion':
+                    infoDiv.innerHTML = "<h3>Captura de Calificación</h3><p>Aquí va la información sobre la captura de calificación...</p>";
+                    break;
+                case 'evaluaciones':
+                    infoDiv.innerHTML = "<h3>Evaluaciones</h3><p>Aquí va la información sobre las evaluaciones...</p>";
+                    break;
+                default:
+                    infoDiv.innerHTML = "<p>Por favor, seleccione una opción para acceder.</p>";
+            }
+        } else {
+            infoDiv.innerHTML = "<p>Por favor, seleccione una opción para acceder.</p>";
         }
-    </script>
+    }
+</script>
+
 </body>
 </html>
