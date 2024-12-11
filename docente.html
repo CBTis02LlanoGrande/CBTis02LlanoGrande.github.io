@@ -119,6 +119,85 @@
         document.getElementById(section).style.display = 'block';
     }
 
+    function mostrarInformacion() {
+        const options = document.getElementsByName('grupo');
+        let selectedOption = null;
+
+        // Verificar cuál opción está seleccionada
+        for (let option of options) {
+            if (option.checked) {
+                selectedOption = option.value;
+                break;
+            }
+        }
+
+        // Si se seleccionó una opción, mostrar la información correspondiente
+        if (selectedOption) {
+            let infoText = '';
+            switch (selectedOption) {
+                case 'basicas':
+                    infoText = ` 
+                        <h3>Información de Básicas</h3>
+                        <table>
+                            <tr>
+                                <th>Elemento</th>
+                                <th>Descripción</th>
+                            </tr>
+                            <tr>
+                                <td>Objetivos</td>
+                                <td>Desarrollo de habilidades y conocimientos básicos.</td>
+                            </tr>
+                            <tr>
+                                <td>Contenidos</td>
+                                <td>Temas fundamentales como Matemáticas,Ciencias,Pensamiento matematico etc.</td>
+                            </tr>
+                            <tr>
+                                <td>Evaluación</td>
+                                <td>Exámenes parciales y tareas.</td>
+                            </tr>
+                        </table>
+                    `;
+                    break;
+                case 'especialidad':
+                    infoText = ` 
+                        <h3>Información de Especialidad</h3>
+                        <table>
+                            <tr>
+                                <th>Elemento</th>
+                                <th>Descripción</th>
+                            </tr>
+                            <tr>
+                                <td>Objetivos</td>
+                                <td>Formación en áreas específicas de la tecnología.</td>
+                            </tr>
+                            <tr>
+                                <td>Contenidos</td>
+                                <td>Temas de electrónica, programación, etc.</td>
+                            </tr>
+                            <tr>
+                                <td>Evaluación</td>
+                                <td>Proyectos prácticos y pruebas técnicas.</td>
+                            </tr>
+                        </table>
+                    `;
+                    break;
+            }
+
+            // Mostrar la información del grupo
+            document.getElementById('infoGrupo').innerHTML = infoText;
+            document.getElementById('grupos').style.display = 'none'; // Ocultar las opciones de grupo
+            document.getElementById('informacion').style.display = 'block'; // Mostrar la información
+        } else {
+            alert('Por favor, selecciona una opción para acceder a la información.');
+        }
+    }
+
+    function volverAGrupos() {
+        // Ocultar la información y mostrar nuevamente las opciones de grupos
+        document.getElementById('informacion').style.display = 'none';
+        document.getElementById('grupos').style.display = 'block';
+    }
+
     function mostrarInformacionCEA() {
         const options = document.getElementsByName('ceaOption');
         let selectedOption = null;
